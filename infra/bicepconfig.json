@@ -1,0 +1,12 @@
+{
+  "analyzers": {
+    "core": {
+      "enabled": true,
+      "rules": {
+        "secrets-in-params-must-be-secure": {
+          "level": "off"
+        }
+      }
+    }
+  }
+}

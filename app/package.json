@@ -1,0 +1,21 @@
+{
+  "name": "spostorage-app",
+  "private": true,
+  "workspaces": [
+    "server",
+    "web",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w @spostorage/shared && npm run build -w @spostorage/server && npm run build -w @spostorage/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "postinstall": "npm run build -w @spostorage/shared",
+    "test:ci": "npm run test -w @spostorage/shared && npm run test -w @spostorage/web && npm run test:v2 -w @spostorage/server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

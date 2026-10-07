@@ -1,0 +1,29 @@
+# Dependencies and build output
+node_modules/
+app/**/node_modules/
+app/**/dist/
+
+# Local configuration, secrets and data — never commit these
+.env
+.env.*
+!.env.example
+config/
+app/server/test/.env.test.local
+*.pem
+*.pfx
+*.key
+infra/main.parameters.json
+
+# Local data exported from a tenant
+output/
+state/
+logs/
+app/data/
+
+# Editor / agent scratch
+.claude/
+.cursor-agent-wrapper.cmd
+.cursor-delegate-*
+tools/
+*.clixml
+app/server/scripts/_*

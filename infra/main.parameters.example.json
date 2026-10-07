@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "appServicePlanName": {
+      "value": "plan-spostorage"
+    },
+    "appServiceSkuName": {
+      "value": "B2"
+    },
+    "webAppName": {
+      "value": "spostorage-web-contoso"
+    },
+    "engineAppName": {
+      "value": "spostorage-engine-contoso"
+    },
+    "sqlServerName": {
+      "value": "sql-spostorage-contoso"
+    },
+    "sqlDatabaseName": {
+      "value": "spostorage"
+    },
+    "sqlAdministratorLogin": {
+      "value": "spostorageadmin"
+    },
+    "sqlAdministratorLoginPassword": {
+      "value": "ChangeMe_Contoso_P@ssw0rd!"
+    },
+    "sqlSkuName": {
+      "value": "S1"
+    },
+    "sqlCapacity": {
+      "value": 20
+    },
+    "storageAccountName": {
+      "value": "stspocontosoarchive"
+    },
+    "storageSkuName": {
+      "value": "Standard_ZRS"
+    },
+    "storageAccessTier": {
+      "value": "Cold"
+    },
+    "archiveContainerName": {
+      "value": "archive"
+    },
+    "spoTenant": {
+      "value": "contoso.sharepoint.com"
+    },
+    "spoStorageAdmins": {
+      "value": "admin@contoso.com"
+    },
+    "appOnlyClientId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "appOnlyTenantId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "appOnlyCertPemBase64": {
+      "value": "REPLACE_WITH_BASE64_PEM_FROM_SETUP_SCRIPT"
+    },
+    "entraWebClientId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "entraWebClientSecretSettingName": {
+      "value": "MICROSOFT_PROVIDER_AUTHENTICATION_SECRET"
+    },
+    "entraWebClientSecret": {
+      "value": "REPLACE_WITH_WEB_APP_CLIENT_SECRET"
+    },
+    "entraTenantId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
