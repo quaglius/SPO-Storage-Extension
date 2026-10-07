@@ -663,8 +663,8 @@ export function PolicyBuilder({
                           <th className="px-3 py-2">File</th>
                           <th className="px-3 py-2">Location</th>
                           <th className="px-3 py-2">Size</th>
-                          <th className="px-3 py-2">Modificado</th>
-                          <th className="px-3 py-2">Last acceso</th>
+                          <th className="px-3 py-2">Modified</th>
+                          <th className="px-3 py-2">Last access</th>
                         </>
                       ) : (
                         <>

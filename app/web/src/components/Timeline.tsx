@@ -21,7 +21,7 @@ interface TimelineProps {
   emptyLabel?: string;
 }
 
-export function Timeline({ events, emptyLabel = 'Sin eventos recientes' }: TimelineProps) {
+export function Timeline({ events, emptyLabel = 'No recent events' }: TimelineProps) {
   if (events.length === 0) {
     return <p className="text-sm text-muted">{emptyLabel}</p>;
   }

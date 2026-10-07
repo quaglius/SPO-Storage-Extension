@@ -66,7 +66,8 @@ const ext = (name) => (name.includes('.') ? name.slice(name.lastIndexOf('.')).to
 function siteMetrics(s) {
   const r = rng(s.id * 97);
   const usedBytes = round(s.usedTb * TB);
-  const percent = s.denied ? null : 0.965 + r() * 0.06;
+  // Sites with a library still crawling (Video Production) or failed (HR) explain less of their usage.
+  const percent = s.denied ? null : s.id === 3 ? 0.874 : s.id === 6 ? 0.931 : 0.965 + r() * 0.06;
   const explainedBytes = s.denied ? 0 : round(usedBytes * percent);
   const versionsBytes = round(explainedBytes * s.versionsShare);
   return {
@@ -499,7 +500,7 @@ const ARCHIVED_FILES = [
   extension: ext(name),
   sizeBytes: round((3.1 + i * 1.7) * GB),
   archivedAt: daysAgo(4 + i * 3),
-  archivedBy: i % 2 ? 'Run #14' : PEOPLE[i % 2 === 0 ? 0 : 1].email,
+  archivedBy: PEOPLE[Math.floor(i / 3) % 2].email,
   originalModifiedAt: daysAgo(900 + i * 40),
   originalModifiedBy: PEOPLE[i % 2].name,
   blobTier: 'Cold',

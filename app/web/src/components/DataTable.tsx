@@ -173,7 +173,7 @@ export function DataTable<T>({
             Previous
           </button>
           <span>
-            Page {table.getState().pagination.pageIndex + 1} de {table.getPageCount() || 1}
+            Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount() || 1}
           </span>
           <button
             type="button"

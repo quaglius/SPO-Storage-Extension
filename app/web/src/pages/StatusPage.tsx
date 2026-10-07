@@ -189,7 +189,7 @@ export function StatusPage() {
               {reconciliation.sitesChecked > 0 && (
                 <div className="flex flex-wrap gap-2 text-xs">
                   <span className="rounded border border-border px-2 py-1">
-                    {reconciliation.sitesMatching} de {reconciliation.sitesChecked} sites match (±2%)
+                    {reconciliation.sitesMatching} of {reconciliation.sitesChecked} sites match (±2%)
                   </span>
                   <span className="rounded border border-border px-2 py-1">{reconciliation.sitesOver} over</span>
                   <span className={`rounded border border-border px-2 py-1 ${reconciliation.sitesUnder > 0 ? 'text-danger' : ''}`}>
@@ -287,7 +287,7 @@ export function StatusPage() {
             <div className="grid grid-cols-2 gap-2 text-xs text-muted sm:grid-cols-4">
               <div>Items/h: {formatNumber(engine.lastHour.items)}</div>
               <div>Throttling: {formatNumber(engine.lastHour.throttled)}</div>
-              <div>Errores: {formatNumber(engine.lastHour.errors)}</div>
+              <div>Errors: {formatNumber(engine.lastHour.errors)}</div>
               <div>
                 Queue: {engine.queue.ready} / overdue {engine.queue.due} / failed {engine.queue.failed}
               </div>
@@ -303,7 +303,7 @@ export function StatusPage() {
                   Retry {failedCount} failed tasks
                 </button>
                 <Link to="/activity?tab=tasks" className="text-accent hover:underline">
-                  Ver en Activity
+                  View in Activity
                 </Link>
               </div>
             ) : null}
@@ -322,7 +322,7 @@ export function StatusPage() {
               to="/files?minVersionsBytes=20971520&sort=versions"
               className="text-accent hover:underline"
             >
-              Ver en Files
+              View in Files
             </Link>
           }
         />
@@ -341,7 +341,7 @@ export function StatusPage() {
               )}`}
               className="text-accent hover:underline"
             >
-              Ver en Files
+              View in Files
             </Link>
           }
         />

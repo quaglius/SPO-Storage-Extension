@@ -413,7 +413,7 @@ export function ArchivedPage() {
       <div>
         <h1 className="text-2xl font-semibold text-ink">Archived</h1>
         <p className="mt-1 text-sm text-muted">
-          {formatNumber(summary.fileCount)} files · {gbLabel} en Blob Cold · approx. cost{' '}
+          {formatNumber(summary.fileCount)} files · {gbLabel} in Blob Cold · approx. cost{' '}
           {coldCostUsd(summary.bytes)}/mo
         </p>
       </div>
@@ -510,7 +510,7 @@ export function ArchivedPage() {
 
           {(tree.data?.files.length ?? 0) > 0 ? (
             <div>
-              <h3 className="mb-2 text-sm font-medium text-ink">Files en esta carpeta</h3>
+              <h3 className="mb-2 text-sm font-medium text-ink">Files in this folder</h3>
               <table className="w-full text-left text-sm">
                 <thead>
                   <tr className="border-b border-border text-muted">

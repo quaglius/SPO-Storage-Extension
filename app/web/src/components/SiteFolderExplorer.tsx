@@ -113,17 +113,17 @@ function FileDetailPanel({
                 </dd>
               </div>
               <div>
-                <dt className="text-muted">Versiones</dt>
+                <dt className="text-muted">Versions</dt>
                 <dd>
                   <ByteText bytes={detail.versionsBytes} />
                 </dd>
               </div>
               <div>
-                <dt className="text-muted">Modificado</dt>
+                <dt className="text-muted">Modified</dt>
                 <dd>{detail.modifiedAt ? formatRelativeDate(detail.modifiedAt) : '—'}</dd>
               </div>
               <div>
-                <dt className="text-muted">Last acceso</dt>
+                <dt className="text-muted">Last access</dt>
                 <dd>
                   {detail.lastAccess
                     ? `${formatRelativeDate(detail.lastAccess.at)}${detail.lastAccess.user ? ` · ${detail.lastAccess.user}` : ''}`
@@ -143,7 +143,7 @@ function FileDetailPanel({
             </dl>
             {detail.versions.length > 0 ? (
               <div>
-                <h4 className="mb-2 text-sm font-medium">Versiones</h4>
+                <h4 className="mb-2 text-sm font-medium">Versions</h4>
                 <ul className="max-h-40 space-y-1 overflow-y-auto text-sm">
                   {detail.versions.map((v) => (
                     <li key={v.label} className="flex justify-between gap-2">
@@ -409,7 +409,7 @@ export function SiteFolderExplorer({ siteId }: { siteId: number }) {
 
               {(folder.data?.files.length ?? 0) > 0 ? (
                 <div>
-                  <h3 className="mb-2 text-sm font-medium text-ink">Files en esta carpeta</h3>
+                  <h3 className="mb-2 text-sm font-medium text-ink">Files in this folder</h3>
                   {folder.data!.hasMore ? (
                     <p className="mb-2 text-xs text-muted">Showing top 300 by size</p>
                   ) : null}
@@ -418,10 +418,10 @@ export function SiteFolderExplorer({ siteId }: { siteId: number }) {
                       <tr className="border-b border-border text-muted">
                         <th className="py-2">Name</th>
                         <th className="py-2">Size</th>
-                        <th className="py-2">Versiones</th>
+                        <th className="py-2">Versions</th>
                         <th className="py-2">Total</th>
-                        <th className="py-2">Modificado</th>
-                        <th className="py-2">Last acceso</th>
+                        <th className="py-2">Modified</th>
+                        <th className="py-2">Last access</th>
                       </tr>
                     </thead>
                     <tbody>

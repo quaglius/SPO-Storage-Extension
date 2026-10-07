@@ -174,8 +174,8 @@ export function FilesPage() {
             onChange={(e) => update({ sort: e.target.value })}
           >
             <option value="size">Size</option>
-            <option value="versions">Versiones</option>
-            <option value="modified">Modificado</option>
+            <option value="versions">Versions</option>
+            <option value="modified">Modified</option>
           </select>
         </label>
       </div>

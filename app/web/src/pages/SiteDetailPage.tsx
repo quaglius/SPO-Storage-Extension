@@ -125,7 +125,7 @@ export function SiteDetailPage() {
           value={data.percent != null ? formatPercent(pct, 1) : '—'}
           footer={<PercentBar value={pct} warnAt={90} dangerAt={98} />}
         />
-        <KpiTile label="Versiones" value={<ByteText bytes={data.versionsBytes} />} />
+        <KpiTile label="Versions" value={<ByteText bytes={data.versionsBytes} />} />
       </div>
 
       <ChartCard title="Folders" subtitle="Browse libraries and folders on this site">
