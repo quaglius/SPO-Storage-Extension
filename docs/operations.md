@@ -23,7 +23,7 @@ database DTU usage.
 
 ## Sizing and cost
 
-Reference numbers from a tenant with ~1,000,000 files / ~36 TB:
+Reference numbers from a large tenant (~1,000,000 files, tens of TB):
 
 | Resource | Recommendation | Notes |
 |---|---|---|

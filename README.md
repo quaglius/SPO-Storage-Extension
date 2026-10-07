@@ -25,8 +25,30 @@ Microsoft bills for, and runs **safe, verifiable clean-up policies**:
 It runs entirely in your own Azure subscription with app-only access (certificate) — no PowerShell sessions, no
 desktop agent, and no data leaves your tenant except to your own Blob Storage.
 
-> Measured on a production tenant: **~1,000,000 files / ~36 TB inventoried in ~18 minutes**, re-scanned daily;
-> archiving streams at ~15 MB/s per file, 6 files in parallel, and verifies every byte.
+> Built for large tenants (around a million files): the inventory is incremental and resumable, re-scanned daily,
+> and archiving streams files in parallel while verifying every byte.
+
+## Screenshots
+
+*Demo data from a fictional "contoso" tenant.*
+
+![Status: quota, reconciliation and engine](docs/images/status.png)
+
+| Lab | Archived (Blob Cold) |
+|---|---|
+| ![Lab](docs/images/lab.png) | ![Archived](docs/images/archived.png) |
+
+<details><summary>More screens</summary>
+
+![Sites](docs/images/sites.png)
+
+![Site detail](docs/images/site-detail.png)
+
+![Policies](docs/images/policies.png)
+
+![Activity](docs/images/activity.png)
+
+</details>
 
 ## Is this for you?
 

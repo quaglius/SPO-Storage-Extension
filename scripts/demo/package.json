@@ -1,0 +1,10 @@
+{
+  "name": "spostorage-demo",
+  "private": true,
+  "type": "module",
+  "description": "Fake-data mock API and README screenshot generator. Install with: npm install --no-save playwright-core",
+  "scripts": {
+    "mock-api": "node mock-api.mjs",
+    "screenshots": "node screenshots.mjs"
+  }
+}

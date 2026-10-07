@@ -9,7 +9,7 @@
 ## 2.0.0 — first public release
 
 - Durable engine on Azure SQL: tenant, sites, libraries, files (size including versions), version detail for heavy
-  files, last access from the Microsoft 365 audit log; ~1 M files scanned in ~18 minutes.
+  files, last access from the Microsoft 365 audit log; ~1 M files scanned in well under an hour.
 - Layered reconciliation against the storage Microsoft counts for the quota.
 - Policies (delete versions, archive to Blob Cold, empty recycle bins, limit versions) with live simulation, three-step
   approval, durable execution and per-action evidence; the Lab for small verified trials.
