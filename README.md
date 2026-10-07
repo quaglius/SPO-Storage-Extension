@@ -1,5 +1,12 @@
 # SpoStorage
 
+[![CI](https://github.com/quaglius/SPO-Storage-Extension/actions/workflows/deploy.yml/badge.svg)](https://github.com/quaglius/SPO-Storage-Extension/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Node 22](https://img.shields.io/badge/node-22-339933?logo=node.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
+![Azure](https://img.shields.io/badge/runs%20on-Azure-0078D4?logo=microsoftazure&logoColor=white)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 **Find out where every byte of your SharePoint Online storage goes — and bring it back under quota.**
 
 SpoStorage is an open-source platform for Microsoft 365 administrators. It inventories a whole SharePoint Online
@@ -20,6 +27,22 @@ desktop agent, and no data leaves your tenant except to your own Blob Storage.
 
 > Measured on a production tenant: **~1,000,000 files / ~36 TB inventoried in ~18 minutes**, re-scanned daily;
 > archiving streams at ~15 MB/s per file, 6 files in parallel, and verifies every byte.
+
+## Is this for you?
+
+You probably need it if any of these sounds familiar:
+
+- "SharePoint storage is over quota and we are paying for extra GB every month."
+- "Which sites and libraries actually eat the space? The admin centre only shows site totals."
+- "Version history is huge, but Microsoft only trims by age or count — not by size, and with no dry run."
+- "Nobody opens these old files, but we can't just delete them. We need cheap storage that keeps who-can-open-what."
+
+| Without SpoStorage | With SpoStorage |
+|---|---|
+| Per-site totals, no explanation | File- and version-level inventory reconciled against what Microsoft bills |
+| Trim versions blindly | Simulate, try in the Lab, approve in three steps, keep evidence |
+| Delete old files or pay for quota | Archive to Blob Cold with a link that preserves permissions, restore any time |
+| One-off PowerShell scripts | A resumable engine with retries, throttling awareness and an audit trail |
 
 ## Why
 
@@ -98,6 +121,22 @@ flowchart LR
 Node.js 22 · TypeScript · Fastify · Azure SQL (`mssql`) · React 18 · Vite · TanStack Query · Tailwind CSS ·
 Azure App Service · Azure Blob Storage · Microsoft Graph · SharePoint REST · Bicep · GitHub Actions (OIDC).
 
+## FAQ
+
+**Does it need a PowerShell session or a desktop agent?** No. Everything runs in your Azure subscription with an
+app-only certificate.
+
+**Does anything leave my tenant?** Only to *your* Blob Storage account. There is no telemetry and no third-party
+service.
+
+**How much does it cost to run?** A small App Service plan, Azure SQL (S1 is enough to start) and Blob Cold storage —
+see the sizing and monthly cost breakdown in [docs/operations.md](docs/operations.md).
+
+**Is it safe to try?** Yes: the inventory is read-only, simulations never call SharePoint, and every destructive
+policy needs explicit approval. Start in the **Lab** with a handful of files.
+
+**OneDrive?** Out of scope for now (per-user quota).
+
 ## Status and limitations
 
 - Built for SharePoint Online sites; **OneDrive is out of scope** (it has its own per-user quota).
@@ -108,6 +147,9 @@ Azure App Service · Azure Blob Storage · Microsoft Graph · SharePoint REST ·
 - Restored files get a new "Modified" date (the original date is kept in the archive record).
 
 ## Contributing and security
+
+If SpoStorage saves you storage (or money), a ⭐ helps others find it. Ideas, questions and success stories are welcome in
+[Discussions](https://github.com/quaglius/SPO-Storage-Extension/discussions).
 
 Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). Please report vulnerabilities privately as
 described in [SECURITY.md](SECURITY.md).
